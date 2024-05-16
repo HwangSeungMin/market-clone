@@ -1,3 +1,7 @@
+<script>
+  import Footer from "../components/Footer.svelte";
+</script>
+
 <header>
   <div class="info-bar">
     <div class="info-bar__time">20:55</div>
@@ -26,39 +30,5 @@
   <a class="write-btn" href="#/write">+ 글쓰기</a>
 </main>
 
-<footer>
-  <div class="footer-block">
-    <div class="footer-icons">
-      <div class="footer-icons__img">
-        <img src="assets/home.svg" alt="" />
-      </div>
-      <div class="footer-icons__desc">홈</div>
-    </div>
-    <div class="footer-icons">
-      <div class="footer-icons__img">
-        <img src="assets/doc.svg" alt="" />
-      </div>
-      <div class="footer-icons__desc">동네생활</div>
-    </div>
-    <div class="footer-icons">
-      <div class="footer-icons__img">
-        <img src="assets/location.svg" alt="" />
-      </div>
-      <div class="footer-icons__desc">내 근처</div>
-    </div>
-    <div class="footer-icons">
-      <div class="footer-icons__img">
-        <img src="assets/chat.svg" alt="" />
-      </div>
-      <div class="footer-icons__desc">채팅</div>
-    </div>
-    <div class="footer-icons">
-      <div class="footer-icons__img">
-        <img src="assets/user.svg" alt="" />
-      </div>
-      <div class="footer-icons__desc">나의 당근</div>
-    </div>
-  </div>
-</footer>
-
+<Footer location="home" />
 <div class="media-info-msg">화면 사이즈를 줄여주세요.</div>
