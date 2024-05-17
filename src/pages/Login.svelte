@@ -1,15 +1,37 @@
-<form id="login-form" action="/signup" method="POST">
-  <div>로그인하기</div>
-  <div>
-    <label for="id">아이디</label>
-    <input type="text" id="id" name="id" required />
-  </div>
-  <div>
-    <label for="password">패스워드</label>
-    <input type="password" id="password" name="password" required />
-  </div>
-  <div>
-    <button type="submit">로그인</button>
-  </div>
-  <div id="info"></div>
-</form>
+<script>
+  import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+  import { user$ } from "../store";
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+  const loginWithGoogle = async () => {
+    const result = await signInWithPopup(auth, provider);
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+    user$.set(user);
+    localStorage.setItem("token", token);
+    try {
+    } catch (error) {
+      console.error(error);
+    }
+  };
+</script>
+
+<div>
+  {#if $user$}
+    <div>{JSON.stringify($user$?.displayName)} 로그인 상태입니다.</div>
+  {/if}
+  <div>로그인 하기</div>
+  <button class="login-btn" on:click={loginWithGoogle}>
+    <div>Google로 시작하기</div>
+  </button>
+</div>
+
+<style>
+  .login-btn {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
