@@ -6,14 +6,13 @@ import { getAuth } from "firebase/auth";
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
-  apiKey: "AIzaSyBKxEC4yWVcIBZENWCmjjwK8xKiF-FcXCM",
-  authDomain: "carrot-market-240516.firebaseapp.com",
-  databaseURL:
-    "https://carrot-market-240516-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "carrot-market-240516",
-  storageBucket: "carrot-market-240516.appspot.com",
-  messagingSenderId: "924609013530",
-  appId: "1:924609013530:web:9c294c7821c5780c04aea3",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DB_URL,
+  ojectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGE_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase
